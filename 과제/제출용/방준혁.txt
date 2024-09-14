@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ko">
+<body>
+    <table border="1">
+        <tr>
+            <th>시간</th>
+            <th>월요일</th>
+            <th>화요일</th>
+            <th>수요일</th>
+            <th>목요일</th>
+            <th>금요일</th>
+        </tr>
+        <tr>
+            <td>09:00 ~ 09:30</td>
+            <td></td>
+            <td rowspan="6">세계화와 사회변화<br>창조예술관 5층<br>Y2532</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>09:30 ~ 10:00</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>10:00 ~ 10:30</td>          
+            <td rowspan="6">웹프로그래밍<br>제5공학관 4층<br>Y5401</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>10:30 ~ 11:00</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>11:00 ~ 11:30</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>11:30 ~ 12:00</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>12:00 ~ 12:30</td>
+            <td></td>
+            <td rowspan="2">채플<br>60주년채플관 2층<br>Y22217</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>12:30 ~ 13:00</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>13:00 ~ 13:30</td>
+            <td rowspan="4">선형대수학개론<br>함박관 5층<br>Y9508</td>
+            <td></td>
+            <td rowspan="2">선형대수학개론<br>함박관 5층<br>Y9508</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>13:30 ~ 14:00</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>14:00 ~ 14:30</td>
+            <td rowspan="6">알고리즘<br>제5공학관 4층<br>Y5445</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>14:30 ~ 15:00</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>15:00 ~ 15:30</td>
+            <td rowspan="6">교양일본어<br>창조예술관 5층<br>Y2526</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>15:30 ~ 16:00</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>16:00 ~ 16:30</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>16:30 ~ 17:00</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>17:00 ~ 17:30</td>
+            <td></td>
+            <td rowspan="6">팀프로젝트1<br>제5공학관 4층<br>Y5441</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>17:30 ~ 18:00</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>18:00 ~ 18:30</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>18:30 ~ 19:00</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>19:00 ~ 19:30</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>19:30 ~ 20:00</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+</body>
+</html>
