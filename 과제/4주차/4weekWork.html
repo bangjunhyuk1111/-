@@ -1,0 +1,260 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>HTML5 기본 프로젝트</title>
+  <style>
+    header h1 {
+        padding: 40px 50px; /* 위아래로 40px, 좌우로 50px의 안쪽 여백 */
+        font-size: 30px;    /* 글자 크기 30px */
+        margin: 0;
+    }
+
+    header h2 {
+        font-size: 15px;
+        font-weight: 200;
+        padding-left: 50px;
+        margin-top: -40px;
+        margin-bottom: 40px;
+    }
+
+    /* Nav styles */
+    nav {
+      border-top: 2px solid #ccc;  /* 위에 선 */
+      border-bottom: 2px solid #ccc; /* 아래에 선 */
+      padding: 10px 0; /* 선과 내용 사이의 여백 */
+      display: flex;
+      justify-content: space-between; /* 메뉴와 검색창을 양 끝으로 정렬 */
+      align-items: center; /* 세로 정렬 */
+    }
+
+    nav ul {
+      list-style-type: none; /* 기본 리스트 스타일 제거 */
+      padding: 0;
+      margin: 0;
+    }
+
+    nav ul > li {
+      display: inline-block; /* 리스트 항목을 가로로 나열 */
+      padding: 5px 20px;     /* 안쪽 여백: 위아래 5px, 좌우 20px */
+      text-align: center;    /* 중앙 정렬 */
+      height: 30px;          /* 높이 30px */
+      line-height: 30px;     /* 글자 중앙 정렬 */
+    }
+
+    nav ul > li > span {
+      display: inline-block;
+      line-height: 30px; /* 높이 맞춤 */
+    }
+
+    nav ul > li ul {
+      display: none; /* 하위 메뉴 숨김 */
+    }
+
+    /* Hover 시 하위 메뉴 표시 */
+    nav ul > li:hover ul {
+      display: block;
+      background-color: black;
+      color: white;
+      cursor: pointer;
+    }
+
+    nav ul > li:hover {
+      background-color: black; /* 호버 시 배경색 검정 */
+      color: white;            /* 호버 시 글자색 흰색 */
+      cursor: pointer;
+    }
+
+    nav a {
+      text-decoration: none; /* 링크 밑줄 제거 */
+      color: inherit;        /* 링크 색상 상속 */
+    }
+
+    /* Form styles */
+    form {
+      float: right;          /* 검색창을 화면 우측으로 이동 */
+    }
+
+    input[type="text"] {
+      height: 26px;             /* 높이 설정 */
+      padding-left: 7px;            /* 안쪽 여백 설정 */
+      border-radius: 20px 0 0 20px; /* 좌측 끝 둥글게 */
+      border: 1px solid #ccc;   /* 테두리 색상 */
+      border-right: none;       /* 우측 테두리 제거 */
+      display: inline-block;    /* 검색창과 버튼을 가로로 배치 */
+      width: 200px;             /* 검색창 너비 설정 */
+      margin-right: -6px;          /* 우측 여백 제거-> 검색창과 버튼이 딱 붙도록 */
+    }
+
+    input[type="submit"] {
+      height: 26px;             /* 버튼 높이 설정 */
+      padding-right: 7px;        /* 버튼 안쪽 여백 설정 */
+      border-radius: 0 20px 20px 0; /* 우측 끝 둥글게 */
+      border: 1px solid #ccc;   /* 테두리 색상 */
+      background-color: #f1f1f1; /* 배경색 */
+      border-left: none;        /* 좌측 테두리 제거 */
+      display: inline-block;    /* 검색창 바로 옆에 버튼이 오록 수정 */
+      
+    }
+
+    input[type="submit"]:hover {
+      background-color: #ddd; /* 호버 시 배경색 변경 */
+    }
+
+
+    .layout {
+      display: flex;
+    }
+    
+
+    
+    aside {
+      float: right;
+      flex: 0 0 300px; /* aside의 너비를 고정 */
+      padding: 20px;
+      border-left: 1px solid #ccc; /* 구분선 추가 */
+    }
+
+    aside ul {
+      list-style-type: none; /* 리스트 앞 점(리스트 표시) 제거 */
+      padding-left: 0; /* 왼쪽 여백 제거 */
+      margin-top: -15px; /* 위로 15px 이동 */
+    }
+
+    aside ul li {
+      padding-left: 10px; /* 리스트 항목을 오른쪽으로 10px 이동 */
+      
+    }
+
+
+    aside ul li a {
+      font-size: 15px; /* 글자 크기 설정 */
+      text-decoration: none; /* 링크 밑줄 제거 */
+      color: inherit;        /* 링크 색상 상속 */
+    }
+
+    article {
+        border-bottom: 2px solid #ccc; /* 아래에 선 */
+        float: left;
+        
+    }
+
+    article h1 {
+        font-size: 30px;
+        font-weight: 400;
+        font-family: 'Times New Roman', Times;
+    }
+
+    article p {
+        font-size: 13px;
+        font-weight: 1000;
+        margin-top: -20px;
+    }
+
+
+  </style>
+</head>
+<body>
+  <div>
+    <header>
+      <h1>HTML5 Example Preview</h1>
+      <h2>컴퓨터공학과</h2>
+    </header>
+    <nav>
+      <div>
+        <ul>
+          <li>
+            <span>HTML5</span>
+            <ul>
+              <li><a href="#">데이터</a></li>
+              <li><a href="#">데이터</a></li>
+            </ul>
+          </li>
+          <li>
+            <span>CSS3</span>
+            <ul>
+              <li><a href="#">데이터</a></li>
+              <li><a href="#">데이터</a></li>
+              <li><a href="#">데이터</a></li>
+            </ul>
+          </li>
+          <li>
+            <span>Javascript</span>
+            <ul>
+              <li><a href="#">데이터</a></li>
+              <li><a href="#">데이터</a></li>
+              <li><a href="#">데이터</a></li>
+              <li><a href="#">데이터</a></li>
+              <li><a href="#">데이터</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <div>
+          <form>
+            <input type="text">
+            <input type="submit" value="검 색">
+          </form>
+        </div>
+      </div>
+    </nav>
+    <div class = "layout"> <!-- Flexbox를 사용하기 위해 수정함. -->
+      <section>
+        <article>
+          <div>
+            <h1>HTML5 개요와 활용</h1>
+            <p>2021년 9월 16일</p>
+          </div>
+          <div>
+            <img src="http://placehold.it/430x280">
+            <br>
+            <br>
+            <p>Velit enim fugiat nulla ipsum nulla. Incididunt sit culpa consequat aliquip ex magna veniam velit magna commodo sint mollit consectetur. Nulla incididunt commodo pariatur sunt sint ullamco.</p>
+            <br>
+            <p>Nulla in fugiat eu pariatur sint labore voluptate. Cillum non sint eiusmod anim magna ex ex ipsum officia aliquip excepteur anim proident velit. Nisi cillum deserunt tempor tempor labore anim sint eu minim proident mollit. Sunt labore adipisicing mollit sint sunt laborum occaecat reprehenderit Lorem fugiat. Cillum dolore anim nostrud aliqua aliqua labore mollit. Cillum velit qui officia ea dolor eu.</p>
+          </div>
+        </article>
+        <article>
+          <div>
+            <h1>HTML5 응용과 실습</h1>
+            <p>2021년 9월 16일</p>
+          </div>
+          <div>
+            <img src="http://placehold.it/430x280">
+            <br>
+            <br>
+            <p>Velit enim fugiat nulla ipsum nulla. Incididunt sit culpa consequat aliquip ex magna veniam velit magna commodo sint mollit consectetur. Nulla incididunt commodo pariatur sunt sint ullamco.</p>
+            <br>
+            <p>Nulla in fugiat eu pariatur sint labore voluptate. Cillum non sint eiusmod anim magna ex ex ipsum officia aliquip excepteur anim proident velit. Nisi cillum deserunt tempor tempor labore anim sint eu minim proident mollit. Sunt labore adipisicing mollit sint sunt laborum occaecat reprehenderit Lorem fugiat. Cillum dolore anim nostrud aliqua aliqua labore mollit. Cillum velit qui officia ea dolor eu.</p>
+          </div>
+        </article>
+      </section>
+      <aside>
+        <div>
+          <h3>카테고리</h3>
+          <ul>
+            <li><a href="#">데이터</a></li>
+            <li><a href="#">데이터</a></li>
+            <li><a href="#">데이터</a></li>
+            <li><a href="#">데이터</a></li>
+            <li><a href="#">데이터</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>최근 글</h3>
+          <ul>
+            <li><a href="#">데이터</a></li>
+            <li><a href="#">데이터</a></li>
+            <li><a href="#">데이터</a></li>
+            <li><a href="#">데이터</a></li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+    <footer>
+      <a href="#">Created By MJU CE</a>
+    </footer>
+  </div>
+</body>
+</html>

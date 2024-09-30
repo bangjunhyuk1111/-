@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const target = "xaaaz"
+        const regExp = /a+(?<Z>z)?/dg;
+
+        const m1 = regExp.exec(target);
+
+        console.log(m1);
+        console.log(regExp.lastIndex);
+
+        const matchedStr = target.slice(...m1.indices[0]);
+        const matchedZGroupStr = target.slice(...m1.indices.groups["Z"]);
+
+        console.log(matchedStr);
+        console.log(matchedZGroupStr);
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
