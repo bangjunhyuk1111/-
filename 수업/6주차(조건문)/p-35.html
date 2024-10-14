@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    const rawInput = prompt("태어난 해를 입력해주세요")
+    const year = Number(rawInput)
+    
+    let 간;
+    let 띠;
+
+    // 천간 계산
+    switch ((year - 4) % 10) {
+        case 0: 간 = '갑'; break;
+        case 1: 간 = '을'; break;
+        case 2: 간 = '병'; break;
+        case 3: 간 = '정'; break;
+        case 4: 간 = '무'; break;
+        case 5: 간 = '기'; break;
+        case 6: 간 = '경'; break;
+        case 7: 간 = '신'; break;
+        case 8: 간 = '임'; break;
+        case 9: 간 = '계'; break;
+    }
+
+    // 지지와 띠 계산
+    switch ((year - 4) % 12) {
+        case 0: 띠 = '자(쥐)'; break;
+        case 1: 띠 = '축(소)'; break;
+        case 2: 띠 = '인(호랑이)'; break;
+        case 3: 띠 = '묘(토끼)'; break;
+        case 4: 띠 = '진(용)'; break;
+        case 5: 띠 = '사(뱀)'; break;
+        case 6: 띠 = '오(말)'; break;
+        case 7: 띠 = '미(양)'; break;
+        case 8: 띠 = '신(원숭이)'; break;
+        case 9: 띠 = '유(닭)'; break;
+        case 10: 띠 = '술(개)'; break;
+        case 11: 띠 = '해(돼지)'; break;
+    }
+
+    alert(`${year}년은 ${간}${띠}년 입니다.`);
+    </script>
+</body>
+</html>

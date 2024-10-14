@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body> 
+    <script>
+        const a = prompt("정수를 입력해주세요")
+        const end = a[a.length - 1] // a의 끝자리
+
+        if ( end === "0" ||
+            end === "2" ||
+            end === "4" ||
+            end === "6" ||
+            end === "8") {
+                alert(`입력한 숫자 ${a} 는 짝수입니다.`)
+            } else {
+                alert(`입력한 숫자 ${a} 는 홀수입니다.`)
+            }
+        
+    </script>
+    
+</body>
+</html>
