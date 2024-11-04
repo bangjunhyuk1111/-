@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 변수를 선언합니다.
+        let numbers = [273, 25, 75, 52, 103, 32, 57, 24, 76]
+        numbers
+        .filter((value) => value % 2 === 1)
+        .filter((value) => value <= 100)
+        .filter((value) => value % 5 === 0)
+        .filter((value) => console.log(value)) //걸러진 값만 출력
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //변수를 선언
+        const test = {
+            a: function() {
+                console.log(this)
+            },
+            b: () => {
+                console.log(this) //화살표에서는 this사용법이 다르다
+            }
+        }
+
+        //호출
+        test.a()
+        test.b()
+    </script>
+    
+</body>
+</html>
