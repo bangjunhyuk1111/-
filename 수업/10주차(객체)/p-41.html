@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const num = 52000 //이렇게 하면 객체가 아니어서 오류
+        //const num = Number(52000) 객체로 선언해주어야 한다.
+        num.원 = function() {
+            return this.valueOf() +'원'
+        }
+        console.log(num.원())
+    </script>
+    
+</body>
+</html>
