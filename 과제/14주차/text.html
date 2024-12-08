@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>할 일 목록</title>
+  <style>
+    .completed {
+      text-decoration: line-through;
+    }
+    .todo-item {
+      margin: 5px 0;
+    }
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>할 일 목록</h1>
+  <input type="text" id="taskName" placeholder="할 일을 입력하세요" />
+  <button id="addTaskButton">추가하기</button>
+  <ul id="taskList"></ul>
+
+  <script>
+    document.getElementById("addTaskButton").addEventListener("click", addTask);
+
+    // 할 일 추가 함수
+    function addTask() {
+      const taskNameInput = document.getElementById("taskName");
+      const taskName = taskNameInput.value;
+
+      if (!taskName) {
+        alert("할 일을 입력하세요!");
+        return;
+      }
+
+      const taskList = document.getElementById("taskList");
+
+      // li 요소 생성
+      const li = document.createElement("li");
+      li.classList.add("todo-item");
+
+      // 체크박스 생성
+      const checkbox = document.createElement("input");
+      checkbox.type = "checkbox";
+      checkbox.classList.add("task-checkbox");
+      checkbox.addEventListener("change", () => handleCheckboxChange(li));
+
+      // 과목 이름(span) 생성
+      const taskSpan = document.createElement("span");
+      taskSpan.textContent = taskName;
+      taskSpan.classList.add("task-name");
+
+      // 날짜 입력(input) 생성
+      const dateInput = document.createElement("input");
+      dateInput.type = "date";
+      dateInput.classList.add("due-date");
+
+      // 남은 일수 버튼 생성
+      const daysButton = document.createElement("button");
+      daysButton.textContent = "남은일수";
+      daysButton.addEventListener("click", () => calculateDaysLeft(li));
+
+      // 남은 일수 표시(span) 생성
+      const daysLeftSpan = document.createElement("span");
+      daysLeftSpan.classList.add("days-left", "hidden");
+
+      // 제거 버튼 생성
+      const deleteButton = document.createElement("button");
+      deleteButton.textContent = "제거하기";
+      deleteButton.classList.add("delete-button", "hidden");
+      deleteButton.addEventListener("click", () => removeTask(li));
+
+      // li 요소에 자식 추가
+      li.appendChild(checkbox);
+      li.appendChild(taskSpan);
+      li.appendChild(dateInput);
+      li.appendChild(daysButton);
+      li.appendChild(daysLeftSpan);
+      li.appendChild(deleteButton);
+
+      // ul에 li 추가
+      taskList.appendChild(li);
+
+      // 입력 필드 초기화
+      taskNameInput.value = "";
+    }
+
+    // 체크박스 상태 변경 및 줄 긋기
+    function handleCheckboxChange(li) {
+      const taskName = li.querySelector(".task-name");
+      const dateInput = li.querySelector(".due-date");
+      const deleteButton = li.querySelector(".delete-button");
+
+      const checkbox = li.querySelector(".task-checkbox");
+      if (checkbox.checked) {
+        taskName.classList.add("completed");
+        if (!dateInput.value) {
+          deleteButton.classList.remove("hidden");
+        }
+      } else {
+        taskName.classList.remove("completed");
+        if (!dateInput.value) {
+          deleteButton.classList.add("hidden");
+        }
+      }
+    }
+
+    // 남은 일수 계산 함수
+    function calculateDaysLeft(li) {
+      const dateInput = li.querySelector(".due-date");
+      const daysLeftSpan = li.querySelector(".days-left");
+      const deleteButton = li.querySelector(".delete-button");
+
+      const dueDate = dateInput.value;
+
+      if (!dueDate) {
+        alert("날짜를 입력하세요!");
+        return;
+      }
+
+      const today = new Date();
+      const endDate = new Date(dueDate);
+      const diffTime = endDate - today;
+      const daysLeft = Math.max(0, Math.floor(diffTime / (1000 * 60 * 60 * 24)));
+
+      daysLeftSpan.textContent = `남은 일수 ${daysLeft}일 남았습니다.`;
+      daysLeftSpan.classList.remove("hidden");
+      deleteButton.classList.remove("hidden");
+    }
+
+    // 할 일 제거 함수
+    function removeTask(li) {
+      li.remove();
+    }
+  </script>
+</body>
+</html>
