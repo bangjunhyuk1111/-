@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 정사각형 클래스
+        class Square {
+          #length; // private 필드 선언
+      
+          constructor(length) {
+            this.length = length; // set length 호출
+          }
+      
+          // Getter: length
+          get length() {
+            return this.#length;
+          }
+      
+          // Setter: length
+          set length(length) {
+            if (length <= 0) {
+              throw "길이는 0보다 커야 합니다.";
+            }
+            this.#length = length;
+          }
+      
+          // 메서드: 넓이 계산
+          get area() {
+            return this.#length * this.#length;
+          }
+      
+          // 메서드: 둘레 계산
+          get perimeter() {
+            return this.#length * 4;
+          }
+        }
+      
+        // 클래스 사용하기
+        const squareA = new Square(10);
+        console.log(`정사각형 한 변의 길이: ${squareA.length}`);
+        console.log(`정사각형의 넓이: ${squareA.area}`);
+        console.log(`정사각형의 둘레: ${squareA.perimeter}`);
+      
+        // 예외 발생시키기
+        try {
+          const squareB = new Square(-10);
+        } catch (error) {
+          console.log(error);
+        }
+      </script>
+      
+    
+</body>
+</html>
